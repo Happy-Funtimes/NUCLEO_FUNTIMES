@@ -1,4 +1,5 @@
 #include "Gamecube.h"
+#include <stdbool.h>
 
 
 void new_gc(Gamecube *gc){
@@ -22,5 +23,25 @@ void new_gc(Gamecube *gc){
 	gc->LEFT_TRIGGER = 0;
 	gc->RIGHT_TRIGGER = 0;
 
+	gc->data_pin = 0;
 	gc->_rumble = false;
+
+}
+
+void print_properties(Gamecube *gc){
+	char str[50];
+	fprintf(str, "X: %d\0", gc->X);
+	// printf(str);
+
+	TX4_print(str);
+}
+
+
+int get_device_id(Gamecube *gc){
+
+}
+
+
+void rumble(Gamecube *gc, bool r){
+
 }

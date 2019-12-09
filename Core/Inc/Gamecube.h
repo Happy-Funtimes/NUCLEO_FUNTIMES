@@ -34,13 +34,16 @@ typedef struct Gamecube{
     int RIGHT_TRIGGER;
 
     // DigitalOut data_line; // Needs mbed.h probably
+    int data_pin;
     bool _rumble;
 }Gamecube;
 
 
 // Gamecube(PinName _data_line);
 void new_gc(Gamecube *gc);
-// int get_device_id();
+void print_properties(Gamecube *gc);
+int get_device_id(Gamecube *gc);
+void rumble(Gamecube *gc, bool r);
 // void gc_write_read(uint32_t* wbuff, uint8_t wbuff_len, uint32_t *rbuff, uint8_t rbuff_len);
 // void rumble(bool r);
 // void update(void);
