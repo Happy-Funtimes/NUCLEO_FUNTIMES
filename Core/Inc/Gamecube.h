@@ -41,9 +41,12 @@ typedef struct Gamecube{
 
 // Gamecube(PinName _data_line);
 void new_gc(Gamecube *gc);
-void print_properties(Gamecube *gc);
 int get_device_id(Gamecube *gc);
 void rumble(Gamecube *gc, bool r);
+void update(Gamecube *gc);
+
+void print_id(Gamecube *gc);
+void print_properties(Gamecube *gc);
 // void gc_write_read(uint32_t* wbuff, uint8_t wbuff_len, uint32_t *rbuff, uint8_t rbuff_len);
 // void rumble(bool r);
 // void update(void);

@@ -1,1 +1,6 @@
-Gamecube.c:4:6:new_gc	16	static
+Gamecube.c:6:6:reverse_array	24	static
+Gamecube.c:16:6:new_gc	16	static
+Gamecube.c:42:6:print_properties	16	static
+Gamecube.c:53:5:get_device_id	16	static
+Gamecube.c:58:6:print_id	80	static
+Gamecube.c:65:6:rumble	16	static

@@ -55,7 +55,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_UART4_Init(void);
 /* USER CODE BEGIN PFP */
-void TX4_print(const char* msg);
+// void TX4_print(const char* msg);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -258,7 +258,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void TX4_print(const char* msg){
+void TX4_print(char* msg){
 	HAL_UART_Transmit(&huart4, (uint8_t*)msg, strlen(msg), 0xFFFF);
 	HAL_UART_Transmit(&huart4, (uint8_t*)"\r\n", strlen("\r\n"), 0xFFFF);
 }

@@ -39,27 +39,27 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Test_Project.elf \
+Nucleo_funtimes.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Test_Project.list \
+Nucleo_funtimes.list \
 
 OBJCOPY_HEX += \
-Test_Project.hex \
+Nucleo_funtimes.hex \
 
 OBJCOPY_BIN += \
-Test_Project.bin \
+Nucleo_funtimes.bin \
 
 
 # All Target
-all: Test_Project.elf secondary-outputs
+all: Nucleo_funtimes.elf secondary-outputs
 
 # Tool invocations
-Test_Project.elf: $(OBJS) $(USER_OBJS) C:\Users\newan\STM32CubeIDE\workspace_1.1.0\Test_Project\STM32H743ZITX_FLASH.ld
-	arm-none-eabi-g++ -o "Test_Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\newan\STM32CubeIDE\workspace_1.1.0\Test_Project\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Nucleo_funtimes.elf: $(OBJS) $(USER_OBJS) C:\Users\Giatec-PC\STM32CubeIDE\workspace_1.0.1\Nucleo_funtimes\STM32H743ZITX_FLASH.ld
+	arm-none-eabi-g++ -o "Nucleo_funtimes.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Giatec-PC\STM32CubeIDE\workspace_1.0.1\Nucleo_funtimes\STM32H743ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Nucleo_funtimes.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -68,18 +68,18 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Test_Project.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Test_Project.list"
+Nucleo_funtimes.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Nucleo_funtimes.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Test_Project.hex: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Test_Project.hex"
+Nucleo_funtimes.hex: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Nucleo_funtimes.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Test_Project.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Test_Project.bin"
+Nucleo_funtimes.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Nucleo_funtimes.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
